@@ -1,11 +1,27 @@
 import tkinter
 
+# Create the global variable to represent the equation
+expression = ""
+def input_number(number, equation):
+    global expression
+
+    # Concatenate the string to create the expression
+    expression = expression + str(number)
+    equation.set(expression)
+
+
+# Reset the calculator
+def clear_input_field(equation):
+    global expression 
+    expression = ""
+    equation.set("Enter the expression")
+
 def main():
     print("Hello world!")
     window = tkinter.Tk()
     # Create the GUI window with specified parameters
     window.title("Calculator")
-    window.geometry("400x200")
+    window.geometry("360x250")
 
     equation = tkinter.StringVar()
 
